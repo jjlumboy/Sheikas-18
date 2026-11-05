@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sheika's Debut | RSVP Guest List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      padding: 20px 10px;
+    }
+    .admin-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: #14141C;
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      border-radius: var(--radius-md);
+      padding: 16px 12px;
+      text-align: center;
+    }
+    .stat-val {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #FFF;
+      font-family: 'Cinzel', serif;
+    }
+    .stat-title {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .table-card {
+      background: #12121A;
+      border: 1px solid rgba(114, 18, 36, 0.6);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+      box-shadow: var(--shadow-lux);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    th {
+      background: #1C0A12;
+      color: var(--metallic-champagne);
+      font-family: 'Cinzel', serif;
+      padding: 14px 16px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+    }
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-silver);
+    }
+    tr:hover td {
+      background: rgba(114, 18, 36, 0.15);
+    }
+    .badge-attending {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: var(--wine-primary);
+      color: #FFF;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-declined {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #334155;
+      color: #94A3B8;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--metallic-champagne);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+    }
+    .filter-bar {
+      margin-bottom: 16px;
+      display: flex;
+      gap: 10px;
+    }
+    .search-box {
+      flex: 1;
+      padding: 10px 14px;
+      background: #09090D;
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      border-radius: 8px;
+      color: #FFF;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <a href="/" class="back-btn">← Back to Invitation</a>
+
+    <div style="text-align: center; margin-bottom: 24px;">
+      <h1 class="font-serif" style="color: #FFF; font-size: 1.8rem; margin-bottom: 4px;">Sheika's Debut RSVP Dashboard</h1>
+      <p style="color: var(--text-muted); font-size: 0.88rem;">Live Guest List & Attendance Database ('rsvps' table)</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-val" id="stat-total">0</div>
+        <div class="stat-title">Total Responses</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color: #4ADE80;" id="stat-attending">0</div>
+        <div class="stat-title">Attending</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color: #F87171;" id="stat-declined">0</div>
+        <div class="stat-title">Declined</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color: var(--metallic-champagne);" id="stat-night">0</div>
+        <div class="stat-title">Night Only</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color: #C084FC;" id="stat-overnight">0</div>
+        <div class="stat-title">Overnight</div>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <input type="text" id="search-input" class="search-box" placeholder="Search by guest name..." oninput="filterTable()">
+    </div>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Guest Name</th>
+            <th>Status</th>
+            <th>Stay Type</th>
+            <th>Submitted At</th>
+          </tr>
+        </thead>
+        <tbody id="rsvps-tbody">
+          <tr><td colspan="5" style="text-align: center; padding: 20px;">Loading responses...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    let allRsvps = [];
+
+    async function fetchRsvps() {
+      try {
+        const res = await fetch('/api/rsvps');
+        const data = await res.json();
+        if (data.success) {
+          document.getElementById('stat-total').textContent = data.stats.total;
+          document.getElementById('stat-attending').textContent = data.stats.attending;
+          document.getElementById('stat-declined').textContent = data.stats.declined;
+          document.getElementById('stat-night').textContent = data.stats.nightOnly;
+          document.getElementById('stat-overnight').textContent = data.stats.overnight;
+
+          allRsvps = data.list;
+          renderTable(allRsvps);
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function renderTable(list) {
+      const tbody = document.getElementById('rsvps-tbody');
+      if (!list.length) {
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:24px; color:#94A3B8;">No RSVP submissions recorded yet.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = list.map(item => `
+        <tr>
+          <td>#${item.id}</td>
+          <td style="font-weight:600; color:#FFF;">${item.guest_name}</td>
+          <td>
+            <span class="${item.attendance_status === 'Attending' ? 'badge-attending' : 'badge-declined'}">
+              ${item.attendance_status}
+            </span>
+          </td>
+          <td>${item.stay_type || '—'}</td>
+          <td style="color:#94A3B8; font-size:0.8rem;">${item.created_at || 'Recently'}</td>
+        </tr>
+      `).join('');
+    }
+
+    function filterTable() {
+      const q = document.getElementById('search-input').value.toLowerCase().trim();
+      const filtered = allRsvps.filter(r => r.guest_name.toLowerCase().includes(q));
+      renderTable(filtered);
+    }
+
+    fetchRsvps();
+  </script>
+</body>
+</html>
