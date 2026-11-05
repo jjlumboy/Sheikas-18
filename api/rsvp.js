@@ -1,4 +1,4 @@
-const { insertRsvp } = require('../db');
+const { kv } = require('@vercel/kv');
 const { sendRsvpNotification } = require('../mailer');
 
 module.exports = async (req, res) => {
@@ -43,12 +43,27 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const record = insertRsvp(guest_name.trim(), attendance_status, finalStayType);
-    await sendRsvpNotification({
-      guestName: record.guest_name,
-      attendanceStatus: record.attendance_status,
-      stayType: record.stay_type
-    });
+    const recordId = `rsvp:${Date.now()}:${Math.floor(Math.random() * 1000)}`;
+    const record = {
+      id: recordId,
+      guest_name: guest_name.trim(),
+      attendance_status,
+      stay_type: finalStayType,
+      created_at: new Date().toISOString()
+    };
+
+    // Save submission to Vercel KV cloud storage list
+    await kv.lpush('rsvps_list', JSON.stringify(record));
+
+    try {
+      await sendRsvpNotification({
+        guestName: record.guest_name,
+        attendanceStatus: record.attendance_status,
+        stayType: record.stay_type
+      });
+    } catch (mailErr) {
+      console.error('Email notification failed but RSVP was saved:', mailErr);
+    }
 
     return res.status(200).json({
       success: true,
@@ -56,7 +71,7 @@ module.exports = async (req, res) => {
       rsvp: record
     });
   } catch (err) {
-    console.error('Error saving RSVP:', err);
+    console.error('Error saving RSVP to Cloud KV:', err);
     return res.status(500).json({ success: false, error: 'Failed to record RSVP.' });
   }
 };
