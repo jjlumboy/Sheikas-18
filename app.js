@@ -400,10 +400,6 @@ function initRsvpForm() {
                        "Role: " + entourageRole + "\n" +
                        "Stay Preference: " + stayVal + "\n\n" +
                        "Your RSVP has been confirmed. We can't wait to celebrate with you! 🥂✨";
-      } else {
-        alertMessage = "✨ Welcome, " + name + "!\n\n" +
-                       "Stay Preference: " + stayVal + "\n\n" +
-                       "Your RSVP has been confirmed. We look forward to celebrating with you! 🥂";
       }
     } else {
       if (entourageRole) {
