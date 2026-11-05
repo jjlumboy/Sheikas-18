@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Sheika's 18th Birthday Debut | Invitation</title>
+  <meta name="description" content="Welcome to my 18th Birthday Debut! Step into adulthood with me on November 14, 2026 at La Lucei.">
+
+  <!-- Google Fonts: Playfair Display + Cinzel + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- 1. LIVE COUNTDOWN TIMER (At the very top of the webpage) -->
+    <header class="top-timer-wrapper">
+      <div class="timer-header">
+        <span class="dot"></span>
+        <span>Countdown to the Debut • Nov 14, 2026 • 6:00 PM</span>
+      </div>
+
+      <div class="countdown-grid" id="countdown-grid">
+        <div class="time-card">
+          <div class="time-val" id="timer-days">00</div>
+          <div class="time-label">Days</div>
+        </div>
+        <div class="time-card">
+          <div class="time-val" id="timer-hours">00</div>
+          <div class="time-label">Hours</div>
+        </div>
+        <div class="time-card">
+          <div class="time-val" id="timer-mins">00</div>
+          <div class="time-label">Mins</div>
+        </div>
+        <div class="time-card">
+          <div class="time-val" id="timer-secs">00</div>
+          <div class="time-label">Secs</div>
+        </div>
+      </div>
+
+      <div class="celebration-started-banner" id="timer-started-banner" style="display: none;">
+        ✨ The Celebration Has Begun! 🥂🍾
+      </div>
+    </header>
+
+    <!-- 2. HERO & FORMAL INVITATION SECTION -->
+    <section class="hero-card">
+      <!-- Chapter 18 Flanked Header -->
+      <div class="chapter-lockup">
+        <span class="chapter-line"></span>
+        <span class="chapter-text">CHAPTER 18 • THE DEBUT</span>
+        <span class="chapter-line"></span>
+      </div>
+
+      <!-- Main Title Lockup -->
+      <div class="hero-title-lockup">
+        <span class="debut-name-italic">Sheika's</span>
+        <h1 class="debut-title-gradient">18th Birthday Debut</h1>
+      </div>
+
+      <!-- Faceted Gem Flanked Divider -->
+      <div class="gem-lockup">
+        <span class="gem-line"></span>
+        <span class="gem-icon" aria-hidden="true">
+          <svg width="22" height="18" viewBox="0 0 24 20" fill="none" stroke="#D8BA8C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 3h12l4 6-10 10L2 9z"></path>
+            <path d="M2 9h20"></path>
+            <path d="M6 3l3.5 6L12 19l2.5-10L18 3"></path>
+          </svg>
+        </span>
+        <span class="gem-line"></span>
+      </div>
+
+      <p class="invitation-quote">
+        "Welcome to my 18th Birthday Debut! 🥂✨ Step into adulthood with me for a night of great music, food, and amazing memories."
+      </p>
+
+      <!-- 4 Event Info Grid Cards -->
+      <div class="info-cards-grid">
+        <!-- CARD 1: DATE -->
+        <div class="info-grid-card">
+          <div class="card-icon-circle">📅</div>
+          <div class="card-info-label">Date</div>
+          <div class="card-info-value">November 14, 2026</div>
+        </div>
+
+        <!-- CARD 2: TIME -->
+        <div class="info-grid-card">
+          <div class="card-icon-circle">⏰</div>
+          <div class="card-info-label">Time</div>
+          <div class="card-info-value">6:00 PM</div>
+          <div class="card-info-subtext">(Gates & Reception open at 6:00 PM)</div>
+        </div>
+
+        <!-- CARD 3: VENUE -->
+        <div class="info-grid-card">
+          <div class="card-icon-circle">📍</div>
+          <div class="card-info-label">Venue</div>
+          <div class="card-info-value">
+            <a href="https://maps.app.goo.gl/Wbuoij4ad15fzwJR6" target="_blank" rel="noopener noreferrer" class="card-venue-link">
+              La Lucei (Click for Maps 🗺️)
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 4: PLEASE RSVP BY -->
+        <div class="info-grid-card">
+          <div class="card-icon-circle">⌛</div>
+          <div class="card-info-label">Please RSVP By</div>
+          <div class="card-info-value" style="color: var(--metallic-champagne);">November 12, 2026</div>
+        </div>
+      </div>
+
+      <!-- Dress Code Motif Section -->
+      <div class="dress-code-card">
+        <div class="dress-code-header">
+          <span class="dress-code-title font-serif">✨ DRESS CODE MOTIF</span>
+        </div>
+        <p class="dress-code-instruction">
+          We would love to celebrate in style with you. Please guide your attire according to our official color palette:
+        </p>
+
+        <div class="color-palette-grid">
+          <!-- 1: Deep Wine -->
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background-color: #6A1B29;" title="Deep Wine"></div>
+            <span class="swatch-label">Deep Wine</span>
+          </div>
+
+          <!-- 2: Dusty Rose -->
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background-color: #D4A5A5;" title="Dusty Rose"></div>
+            <span class="swatch-label">Dusty Rose</span>
+          </div>
+
+          <!-- 3: Blush -->
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background-color: #FFD1DC;" title="Blush"></div>
+            <span class="swatch-label">Blush</span>
+          </div>
+
+          <!-- 4: Champagne -->
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background-color: #F1E4D3;" title="Champagne"></div>
+            <span class="swatch-label">Champagne</span>
+          </div>
+
+          <!-- 5: Ivory -->
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background-color: #FFFFF0;" title="Ivory"></div>
+            <span class="swatch-label">Ivory</span>
+          </div>
+
+          <!-- 6: Black -->
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background-color: #000000; border-color: rgba(197, 160, 89, 0.5);" title="Black"></div>
+            <span class="swatch-label">Black</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strict Capacity Warning Notice -->
+      <div class="strict-policy-card" style="margin-top: 14px;">
+        <div class="policy-badge">
+          <span>⚠️</span> Important Note
+        </div>
+        <div class="policy-text">
+          Due to strict venue capacity limits, this invitation is strictly for you only (no plus ones allowed). Thank you for understanding!
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. DEBUT PROGRAM & ENTOURAGE TABS (Collapsible Mobile Accordions) -->
+    <section class="entourage-section">
+      <div class="section-title-wrap">
+        <div class="section-eyebrow font-serif">Debut Program</div>
+        <h2 class="section-title font-serif">The Royal Entourage</h2>
+      </div>
+
+      <div class="accordions-list">
+        <!-- Accordion 1: 18 Roses & Dances -->
+        <div class="accordion-group">
+          <button class="accordion-trigger" type="button">
+            <div class="accordion-title-left">
+              <span class="accordion-icon">🌹</span>
+              <span>18 Roses & Dances</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="accordion-counter">18</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content-inner" id="roses-list">
+              <!-- Rendered via JavaScript -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 2: 18 Gifts -->
+        <div class="accordion-group">
+          <button class="accordion-trigger" type="button">
+            <div class="accordion-title-left">
+              <span class="accordion-icon">🕯️</span>
+              <span>18 Gifts</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="accordion-counter">18</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content-inner" id="gifts-list">
+              <!-- Rendered via JavaScript -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 3: 18 Bills -->
+        <div class="accordion-group">
+          <button class="accordion-trigger" type="button">
+            <div class="accordion-title-left">
+              <span class="accordion-icon">💵</span>
+              <span>18 Bills</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="accordion-counter">18</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content-inner" id="bills-list">
+              <!-- Rendered via JavaScript -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 4: 18 Shots -->
+        <div class="accordion-group">
+          <button class="accordion-trigger" type="button">
+            <div class="accordion-title-left">
+              <span class="accordion-icon">🥃</span>
+              <span>18 Shots</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="accordion-counter">18</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content-inner" id="shots-list">
+              <!-- Rendered via JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. STREAMLINED RSVP FORM -->
+    <section class="rsvp-section" id="rsvp">
+      <div class="form-header">
+        <h3 class="font-serif">Confirm Your Attendance</h3>
+        <p>Please respond on or before November 12, 2026</p>
+      </div>
+
+      <!-- Closed notice container (if deadline expired) -->
+      <div id="deadline-lockout-notice" class="rsvp-closed-badge" style="display: none;">
+        ⏳ RSVP Submissions are now closed as of November 12, 2026. Thank you!
+      </div>
+
+      <form id="rsvp-form" autocomplete="off">
+        <!-- Guest Name: Strictly ONE guest -->
+        <div class="form-group">
+          <label class="form-label" for="guest_name">
+            Guest Name <span class="req">*</span>
+          </label>
+          <input
+            type="text"
+            id="guest_name"
+            name="guest_name"
+            class="text-input"
+            placeholder="e.g. Maria Santos"
+            required
+            maxlength="80"
+            autocapitalize="words"
+            oninput="this.value = this.value.replace(/\b([a-z])/g, m => m.toUpperCase())"
+          >
+          <small class="single-guest-note">
+            ℹ️ One guest name only. Plus ones cannot be accommodated.
+          </small>
+        </div>
+
+        <!-- Attendance Status: Attending vs Declined -->
+        <div class="form-group">
+          <label class="form-label">
+            Attendance Status <span class="req">*</span>
+          </label>
+          <div class="radio-cards-grid">
+            <label class="radio-card">
+              <input type="radio" name="attendance_status" value="Attending" required>
+              <div class="radio-card-content">
+                <div class="radio-card-icon">🥂</div>
+                <div class="radio-card-title">Attending</div>
+                <div class="radio-card-sub">Gladly accept</div>
+              </div>
+            </label>
+
+            <label class="radio-card">
+              <input type="radio" name="attendance_status" value="Declined" required>
+              <div class="radio-card-content">
+                <div class="radio-card-icon">✨</div>
+                <div class="radio-card-title">Declined</div>
+                <div class="radio-card-sub">With regrets</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Conditional Box: Stay Preference (Only visible when Attending) -->
+        <div id="stay-field-container" class="stay-preference-container">
+          <div class="stay-preference-label">
+            <span>🌙</span> Stay Preference
+          </div>
+          <div class="stay-options-grid">
+            <label class="stay-option-card">
+              <input type="radio" name="stay_type" id="stay-night" value="Night Only" checked>
+              <div class="stay-box">
+                <div class="stay-box-icon">🍸</div>
+                <div class="stay-box-title">Night Only</div>
+                <div class="stay-box-desc">Until party ends</div>
+              </div>
+            </label>
+
+            <label class="stay-option-card">
+              <input type="radio" name="stay_type" id="stay-overnight" value="Overnight">
+              <div class="stay-box">
+                <div class="stay-box-icon">🌅</div>
+                <div class="stay-box-title">Overnight</div>
+                <div class="stay-box-desc">Staying overnight</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn" id="submit-rsvp-btn">
+          <span>Confirm My RSVP</span>
+          <span style="font-size: 1.2rem;">✨</span>
+        </button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-wrap">
+      <p>Sheika's 18th Debut • November 14, 2026 • La Lucei</p>
+      <p style="margin-top: 6px; color: #475569;">Made with elegance for a milestone celebration</p>
+    </footer>
+
+  </div><!-- /.app-container -->
+
+  <!-- 5. FLOATING WINE-RED VINYL MUSIC TOGGLE -->
+  <div class="floating-music-widget">
+    <div class="music-pill" id="music-pill">
+      <div class="music-soundwaves">
+        <div class="soundwave-bar"></div>
+        <div class="soundwave-bar"></div>
+        <div class="soundwave-bar"></div>
+      </div>
+      <span id="music-label">Music</span>
+    </div>
+
+    <div class="vinyl-disc-btn" id="vinyl-disc-btn" title="Tap to Toggle Music" aria-label="Toggle Music">
+      <div class="vinyl-center-label">
+        <div class="vinyl-spindle-hole"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Audio Element -->
+  <audio id="bg-music" preload="auto" loop playsinline webkit-playsinline>
+    <source src="audio/Cinderella.aac" type="audio/aac">
+  </audio>
+
+  <!-- Celebratory Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- 6. CELEBRATION MODAL -->
+  <div class="modal-overlay" id="celebration-modal">
+    <div class="modal-box">
+      <div class="modal-icon" id="modal-icon">🥂✨</div>
+      <h3 class="modal-title" id="modal-title">RSVP Confirmed</h3>
+      <p class="modal-msg" id="modal-msg">Thank you for confirming your response!</p>
+      <button type="button" class="modal-close-btn" id="modal-close-btn">Close</button>
+    </div>
+  </div>
+
+  <!-- Entourage Arrays -->
+  <script>
+    const rosesList = [
+      "Prince Abel Misa", "Raiko Renz Ramos", "Zhion Ardaniel", "Karl Chester Lucas", 
+      "Rey Mendoza", "Jozhua Neal Dizon", "Nico Jambalos", "Karl Simon Flores", 
+      "Sebastian Rafael Milan", "Rafael Pagasartonga", "Zhangie Rey Sevilla", "Vj Vicencio", 
+      "Wesley Hamos", "Jonar Pillas", "Freence Jhernee Mejos", "Ahmad Walter Lumboy", 
+      "Zimran Keefe Shafir Ardaniel", "Jhon Walter Lumboy"
+    ];
+
+    const giftsList = [
+      "Alira Chanelle Lumboy", "Abegail Joice Pillas", "Leira Jane Encila", "Alyza Monique Platilla", 
+      "Kaycee Licono", "Jaztien Rain Soriano", "Jhena Leoligao", "Ma. Cristina Barreto", 
+      "Kiaren Umipig", "Rhian Jane Petaño", "Geramie Celestra", "Sarah Jane Perdiguerra", 
+      "Shairish Aramil", "Lyian Ashley Tugbang", "Rhegine Latiban", "Chellsy Marie Onilongo", 
+      "Kwincy Pillas", "Florabel Misa"
+    ];
+
+    const billsList = [
+      "Ps. Enone Cerda", "Ps. Julie Villarta", "Merinel Dizon", "Aura Villaflor", 
+      "Loida Fernandez", "Crisenia Mejos", "Belle Pillas", "Leiticia Hamos", 
+      "Janice Pillas", "Princess Hamos", "Ira Mapula", "Jherico Guipe", 
+      "Zharby Pillas", "Floyd Mejos", "Jalen Suelila", "Annaliza Gura", 
+      "Sofia Naraine Onilongo", "Jhon Walter Pillas"
+    ];
+
+    const shotsList = [
+      "Lhance Rain Ramos", "Leur Ali Ramos", "Fatima Lumboy", "Denelle Dizon", 
+      "Nel-Irem Dizon", "Prince Ian Cordero", "Rudy Misa", "Ruel Ramos", 
+      "Duke Dimafelix", "Anthony Tabucol", "Raymark Villador", "Nyoy Cariño", 
+      "Julian Orallo", "Mark Rusell Tamiao", "Nhoa Mercado", "Jarem Sistina", 
+      "Keith Reyes", "Saldy Mangampo"
+    ];
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>
