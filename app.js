@@ -461,7 +461,7 @@ function initRsvpForm() {
                 <span class="modal-detail-val">${stayType}</span>
               </div>
             </div>
-            We can't wait to celebrate with you on November 14, 2026 at La Lucei! 🥂✨
+            We can't wait to celebrate with you on November 14, 2026 at La Lucei!🥂✨
           `
         });
       } else {
