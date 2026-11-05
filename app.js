@@ -414,9 +414,6 @@ function initRsvpForm() {
       }
     }
 
-    // Show alert pop-up recognizing entourage role and stay preference
-    alert(alertMessage);
-
     // Disable button while processing
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span>Saving RSVP...</span>';
