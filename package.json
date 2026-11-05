@@ -1,0 +1,20 @@
+{
+  "name": "sheika-18th-debut-website",
+  "version": "1.0.0",
+  "description": "Sleek, casual yet elegant mobile-first 18th Birthday Debut Invitation website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "nodemailer": "^10.3.1"
+  }
+}
